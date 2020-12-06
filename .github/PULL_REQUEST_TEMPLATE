@@ -1,0 +1,15 @@
+ref. or closes a specific issue (paste here the issue link)
+
+## What
+- Describe what you did.
+- [ ] Task 1:
+  - [ ] Task 1.1;
+  - [ ] Tast 1.2;
+- [ ] Task 2;
+
+## Why
+- Describe here the necessity of this change you did.
+
+
+## Test
+- You should explain how to test the feature/enhancement/fix including in this PR.

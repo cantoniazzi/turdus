@@ -1,3 +1,9 @@
+# OS stuffs
+.DS_Store
+
+# EDITORS stuffs
+.vscode/
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
