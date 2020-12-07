@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/cantoniazzi/turdus/api/healthcheck"
+	"github.com/cantoniazzi/turdus/api/tweet"
 	"github.com/gorilla/mux"
 )
 
@@ -19,6 +20,10 @@ func Start() {
 	r.HandleFunc("/health-check",
 		healthcheck.Handler,
 	).Methods("GET")
+
+	r.HandleFunc("/tweets",
+		tweet.Handler,
+	).Methods("POST")
 
 	fmt.Println("Turdus API it's running on port", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), r))
