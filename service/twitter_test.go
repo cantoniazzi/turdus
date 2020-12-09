@@ -9,15 +9,11 @@ import (
 	"github.com/jarcoal/httpmock"
 )
 
-const url = "www.twitter_api.com"
-const bearer = "a secret bearer token"
-const maxResults = 100
-
 func getServiceMock() service.TwitterService {
 	return service.TwitterService{
-		URL:         url,
-		TokenBearer: bearer,
-		MaxResults:  maxResults,
+		URL:         "www.twitter_api.com",
+		TokenBearer: "a secret bearer token",
+		MaxResults:  100,
 	}
 }
 
@@ -42,7 +38,7 @@ func TestGetTweets(t *testing.T) {
 	trEncoded, _ := json.Marshal(tr)
 	httpmock.RegisterResponder(
 		"POST",
-		url,
+		svcMock.URL,
 		httpmock.NewStringResponder(200, string(trEncoded)),
 	)
 
