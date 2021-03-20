@@ -1,0 +1,20 @@
+name: main
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: copying env file
+        run: cp .env_sample .env
+
+      - name: install dependencies
+        run: make docker/build
